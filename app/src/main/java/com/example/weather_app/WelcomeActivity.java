@@ -19,7 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_welcome);
 
         start = findViewById(R.id.start_btn);
@@ -28,8 +28,9 @@ public class WelcomeActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseUser user = mAuth.getCurrentUser();
 
-                if (mAuth.getCurrentUser() == null){
+                if (user != null){
                     startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 }else {
                     startActivity(new Intent(WelcomeActivity.this, SignInActivity.class));
