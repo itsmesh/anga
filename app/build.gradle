@@ -10,7 +10,7 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 
 android {
-    namespace 'com.example.weather_app'
+    namespace 'com.example.Weather_App'
     compileSdk 33
 
     defaultConfig {
@@ -32,11 +32,18 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            // ...
+            buildConfigField "String", "API_KEY", "\"your_api_key_here\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_KEY", "\"your_api_key_here\""
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -50,8 +57,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.squareup.picasso:picasso:2.8'
-    implementation 'com.google.firebase:firebase-auth:21.1.0'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

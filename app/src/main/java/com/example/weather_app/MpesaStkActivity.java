@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.Weather_App.R;
 import com.example.weather_app.Services.DarajaApiClient;
 import com.example.weather_app.model.AccessToken;
 import com.example.weather_app.model.STKPush;
@@ -32,16 +33,19 @@ public class MpesaStkActivity extends AppCompatActivity implements MyEventListen
     private DarajaApiClient mApiClient;
     private ProgressDialog mProgressDialog;
 
-    @BindView(R.id.amount)
+
     EditText mAmount;
-    @BindView(R.id.phone_number)EditText mPhone;
-    @BindView(R.id.pay)
+    EditText mPhone;
     Button mPay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mpesa_stk);
+
+        mAmount = findViewById(R.id.amount);
+        mPay = findViewById(R.id.pay);
+        mPhone = findViewById(R.id.phone_number);
 
         ButterKnife.bind(this);
 

@@ -17,10 +17,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MpesaStkActivity"
+            android:name="com.example.weather_app.MpesaStkActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.example.weather_app.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,13 +29,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name="com.example.weather_app.SignInActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUpActivity"
+            android:name="com.example.weather_app.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.weather_app.MainActivity"
             android:exported="true" />
     </application>
 

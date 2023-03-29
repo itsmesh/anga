@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.Weather_App.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         JSONObject jsonObject = new JSONObject(response);
-                        Log.d("cities json", response);
+//                        Log.d("cities json", response);
 
                         //find country
                         JSONObject object1 = jsonObject.getJSONObject("sys");
